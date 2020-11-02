@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Behavioral\Observer\Observer.csproj" />
     <ProjectReference Include="..\Behavioral\State\State.csproj" />
     <ProjectReference Include="..\Behavioral\Strategy\Strategy.csproj" />
   </ItemGroup>

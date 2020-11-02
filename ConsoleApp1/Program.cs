@@ -1,4 +1,6 @@
-﻿using State;
+﻿using Observer;
+using Observer.ObserverDemo2;
+using State;
 using Strategy;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,10 @@ namespace ConsoleApp1
             //Behavioral_Strategy();
 
             //Behavioral_State();
-            Behavioral_StateDemo2();
+            //Behavioral_StateDemo2();
 
+            //Behavioral_Observer();
+            Behavioral_ObserverDemo2();
 
             // Structural ***********************************************
             //
@@ -107,8 +111,43 @@ namespace ConsoleApp1
         }
 
         static void Behavioral_Observer() 
-        { 
-        
+        {
+            var dataSource = new DataSource();
+            var sheet1 = new SpreadSheet(dataSource);
+            var sheet2 = new SpreadSheet(dataSource);
+            var chart = new Chart(dataSource);
+
+            dataSource.addObserver(sheet1);
+            dataSource.addObserver(sheet2);
+            dataSource.addObserver(chart);
+
+            dataSource.setValue(1);
+
+        }
+        static void Behavioral_ObserverDemo2() 
+        {
+            var statusBar = new StatusBar();
+            var stockListView = new StockListView();
+
+            var stock1 = new Stock("stock1", 10);
+            var stock2 = new Stock("stock2", 20);
+            var stock3 = new Stock("stock3", 30);
+
+            // The status bar shows the popular stocks
+            statusBar.addStock(stock1);
+            statusBar.addStock(stock2);
+
+            // The stock view list shows all stocks
+            stockListView.addStock(stock1);
+            stockListView.addStock(stock2);
+            stockListView.addStock(stock3);
+
+            // Causes both statusBar and stockListView to get refreshed
+            stock2.setPrice(21);
+
+            // Causes only the stockListView to get refreshed. (statusBar
+            // is not watching this stock.)
+            stock3.setPrice(9);
         }
         static void Behavioral_Visitor()
         {
