@@ -8,6 +8,8 @@ using Visitor.Demo2;
 using System.Collections.Generic;
 using Facade;
 using Facade.Demo2;
+using Decorator;
+using Decorator.Demo2;
 
 namespace ConsoleApp1
 {
@@ -29,7 +31,10 @@ namespace ConsoleApp1
 
             // Structural ***********************************************
             //Structural_Facade();
-            Structural_FacadeDemo2();
+            //Structural_FacadeDemo2();
+
+            //Structural_Decorator();
+            Structural_DecoratorDemo2();
 
 
             // Creational ***********************************************
@@ -281,7 +286,31 @@ namespace ConsoleApp1
         }
         static void Structural_Decorator()
         {
+            //var cloudStream = new CloudStream();
+            //cloudStream.write("Hello World!");
 
+            // Normal without decorators:
+            //storeCreditCard(new CloudStream());
+
+            // EncryptedCloudStream decorator
+            //storeCreditCard(new Compress(new EncriptedCloudStream(new CloudStream())));
+
+            // Compress decorator:
+            //storeCreditCard(new Compress(new CloudStream()));
+
+            // with 2 decorators: We are adding behavior to an object dynamically
+            storeCreditCard(new EncryptedCloudStream(new Compress(new CloudStream())));
+
+        }
+        static void storeCreditCard(IStream stream) 
+        {
+            // stream is transparent or invisible to storeCreditCard method, only needs a stream
+            stream.write("1234-1234-1234-1234");
+        }
+        static void Structural_DecoratorDemo2() 
+        {
+            var editor = new Editor();
+            editor.openProject("...");
         }
         #endregion
 
