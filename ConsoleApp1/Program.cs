@@ -3,7 +3,11 @@ using Observer.ObserverDemo2;
 using State;
 using Strategy;
 using System;
+using Visitor;
+using Visitor.Demo2;
 using System.Collections.Generic;
+using Facade;
+using Facade.Demo2;
 
 namespace ConsoleApp1
 {
@@ -18,10 +22,14 @@ namespace ConsoleApp1
             //Behavioral_StateDemo2();
 
             //Behavioral_Observer();
-            Behavioral_ObserverDemo2();
+            //Behavioral_ObserverDemo2();
+
+            //Behavioral_Visitor();
+            //Behavioral_VisitorDemo2();
 
             // Structural ***********************************************
-            //
+            //Structural_Facade();
+            Structural_FacadeDemo2();
 
 
             // Creational ***********************************************
@@ -151,8 +159,24 @@ namespace ConsoleApp1
         }
         static void Behavioral_Visitor()
         {
+            var document = new HtmlDocument();
+            document.add(new HeadingNode());
+            document.add(new AnchorNode());
+            
+            document.execute(new HighlightOperation()); // Highlight operation
 
+            document.execute(new PlainTextOperation()); // Plain text Operation
+
+            // If we need to add a new operation just create a new class that implements IOperation interface
         }
+        static void Behavioral_VisitorDemo2()
+        {
+            var wavFile = WavFile.read("myfile.wav");
+            wavFile.applyFilter(new NoiseReductionFilter());
+            wavFile.applyFilter(new ReverbFilter());
+            wavFile.applyFilter(new NormalizeFilter());
+        }
+
         static void Behavioral_Memento()
         {
 
@@ -228,7 +252,28 @@ namespace ConsoleApp1
         }
         static void Structural_Facade()
         {
+            // for the facade patter we introduce a new class to encapsulate all below logic:
+            //var server = new NotificationServer1();
+            //var connection = server.connect("ip");
+            //var authToken = server.authenticate("appID", "key");
+            //var message = new Message("Hello World");
+            //server.send(authToken, message, "target");
+            //connection.disconnect();
 
+            var service = new NotificationService();
+            service.send("Hello World", "target");
+        }
+        static void Structural_FacadeDemo2() 
+        {
+            //var oauth = new OAuth();
+            //var requestToken = oauth.requestToken("appKey", "secret");
+            //var accessToken = oauth.getAccessToken(requestToken);
+
+            //var twitterClient = new TwitterClient();
+            //var tweets = twitterClient.getRecentTweets(accessToken);
+
+            var twitterAPI = new TwitterAPI("appKey", "secret");
+            var tweets = twitterAPI.getRecentTweets();
         }
         static void Structural_Bridge()
         {
