@@ -10,6 +10,8 @@ using Facade;
 using Facade.Demo2;
 using Decorator;
 using Decorator.Demo2;
+using Adapter;
+using Adapter.Demo2;
 
 namespace ConsoleApp1
 {
@@ -34,8 +36,10 @@ namespace ConsoleApp1
             //Structural_FacadeDemo2();
 
             //Structural_Decorator();
-            Structural_DecoratorDemo2();
+            //Structural_DecoratorDemo2();
 
+            //Structural_Adapter();
+            Structural_AdapterDemo2();
 
             // Creational ***********************************************
             //
@@ -241,7 +245,22 @@ namespace ConsoleApp1
         #region Structural
         static void Structural_Adapter()
         {
+            var imageView = new ImageView(new Image());
+            imageView.apply(new VividFilter());
 
+            // our apply method expects a IFilter object, but CaramelFilter does not implement it,
+            // we need an adapter to make it work
+            //imageView.apply(new CaramelFilter());
+            imageView.apply(new CaramelFilter(new Caramel()));
+
+        }
+        static void Structural_AdapterDemo2() 
+        {
+            var emailClient = new EmailClient();
+            //emailClient.addProvider(new GmailClient());
+            emailClient.addProvider(new GmailAdapter());
+            emailClient.downloadEmails();
+        
         }
         static void Structural_Composite()
         {
