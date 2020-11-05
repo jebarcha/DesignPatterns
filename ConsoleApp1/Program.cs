@@ -12,6 +12,8 @@ using Decorator;
 using Decorator.Demo2;
 using Adapter;
 using Adapter.Demo2;
+using Composite;
+using Composite.Demo2;
 
 namespace ConsoleApp1
 {
@@ -39,7 +41,11 @@ namespace ConsoleApp1
             //Structural_DecoratorDemo2();
 
             //Structural_Adapter();
-            Structural_AdapterDemo2();
+            //Structural_AdapterDemo2();
+
+            //Structural_Composite();
+            Structural_CompositeDemo2();
+
 
             // Creational ***********************************************
             //
@@ -264,7 +270,40 @@ namespace ConsoleApp1
         }
         static void Structural_Composite()
         {
+            var group1 = new Group();
+            group1.add(new Shape()); // our imaginary square
+            group1.add(new Shape());
 
+            var group2 = new Group();
+            group2.add(new Shape()); // our imaginary circle
+            group2.add(new Shape());
+
+            // combine those 2 groups in to a new group
+            var group = new Group();
+            group.add(group1);  // add a group inside a group
+            group.add(group2);
+            group.render();
+            group.move();
+
+
+        }
+        static void Structural_CompositeDemo2() 
+        {
+            var subTeam1 = new Team();
+            subTeam1.add(new Truck());
+            subTeam1.add(new HumanResource());
+            subTeam1.add(new HumanResource());
+
+            var subTeam2 = new Team();
+            subTeam2.add(new Truck());
+            subTeam2.add(new HumanResource());
+            subTeam2.add(new HumanResource());
+
+            var team = new Team();
+            team.add(subTeam1);
+            team.add(subTeam2);
+
+            team.deploy();
         }
         static void Structural_Proxy()
         {
