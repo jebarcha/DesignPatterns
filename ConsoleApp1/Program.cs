@@ -14,6 +14,8 @@ using Adapter;
 using Adapter.Demo2;
 using Composite;
 using Composite.Demo2;
+using Proxy;
+using Proxy.Demo2;
 
 namespace ConsoleApp1
 {
@@ -44,8 +46,10 @@ namespace ConsoleApp1
             //Structural_AdapterDemo2();
 
             //Structural_Composite();
-            Structural_CompositeDemo2();
+            //Structural_CompositeDemo2();
 
+            //Structural_Proxy();
+            Structural_ProxyDemo2();
 
             // Creational ***********************************************
             //
@@ -307,7 +311,53 @@ namespace ConsoleApp1
         }
         static void Structural_Proxy()
         {
+            // in this implementation we are loadin 3 ebooks in memory and open 1
+            // the problem would be if we have hundreds or thousends of ebooks, we should not load all them in memory because it is costly
+            // We can use the Proxy pattern to solve this problem. We should load the ebook on demand only when we need it.
 
+            var library = new Library();
+            String[] fileNames = { "a", "b", "c" };
+
+            foreach (var fileName in fileNames) 
+            {
+                library.add(new LoggingEbookProxy(fileName));
+                //library.add(new EbookProxy(fileName));
+                //library.add(new RealEBook(fileName));
+            }
+
+            library.openEbook("a");
+            library.openEbook("b");
+
+        }
+        static void Structural_ProxyDemo2() 
+        {
+            //var dbContext = new DbContext();
+
+            //// We read an object (eg a product) from a database.
+            //var product = dbContext.getProduct(1);
+
+            //// We modify the properties of the object in memory.
+            //product.setName("Updated Name");
+
+            //// DbContext should keep track of changed objects in memory.
+            //// When we call saveChanges(), it'll automatically generate
+            //// the right SQL statements to update our database.
+            //dbContext.saveChanges();
+
+            //// After saving the changes to the database, we can
+            //// change our in-memory object again and save the changes.
+            //product.setName("Another name");
+            //dbContext.saveChanges();
+
+
+            var dbContext = new DbContext();
+            var product = dbContext.getProduct(1);
+            product.setName("Updated Name");
+            dbContext.saveChanges();
+
+            product.setName("Another name");
+            dbContext.saveChanges();
+        
         }
         static void Structural_FlyWeight()
         {
