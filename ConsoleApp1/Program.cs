@@ -16,6 +16,8 @@ using Composite;
 using Composite.Demo2;
 using Proxy;
 using Proxy.Demo2;
+using Memento;
+using Memento.Demo2;
 
 namespace ConsoleApp1
 {
@@ -35,6 +37,10 @@ namespace ConsoleApp1
             //Behavioral_Visitor();
             //Behavioral_VisitorDemo2();
 
+            //Behavioral_Memento();
+            Behavioral_MementoDemo2();
+
+
             // Structural ***********************************************
             //Structural_Facade();
             //Structural_FacadeDemo2();
@@ -49,7 +55,7 @@ namespace ConsoleApp1
             //Structural_CompositeDemo2();
 
             //Structural_Proxy();
-            Structural_ProxyDemo2();
+            //Structural_ProxyDemo2();
 
             // Creational ***********************************************
             //
@@ -198,6 +204,50 @@ namespace ConsoleApp1
 
         static void Behavioral_Memento()
         {
+            var editor = new EditorM();
+            var history = new History();
+
+            editor.setContent("A");
+            history.Push(editor.CreateState());
+
+            editor.setContent("B");
+            history.Push(editor.CreateState());
+
+            editor.setContent("C");
+            editor.Restore(history.Pop());
+            editor.Restore(history.Pop());
+
+            Console.WriteLine(editor.getContent());
+
+        }
+        static void Behavioral_MementoDemo2() 
+        {
+            var doc = new Document();
+            var history = new DocHistory();
+
+            doc.SetContent("Hello World");
+            history.Push(doc.CreateMemento());
+
+            doc.SetFontName("font N1");
+            history.Push(doc.CreateMemento());
+
+            doc.SetFontSize(12);
+
+            Console.WriteLine(doc.ToString());
+
+            doc.Restore(history.Pop());
+            Console.WriteLine(doc.ToString());
+
+            doc.Restore(history.Pop());
+            Console.WriteLine(doc.ToString());
+
+            history.Push(doc.CreateMemento());  // CreateMemento before any change, so you can revert using Restore method
+            doc.SetFontName("font N2");
+            Console.WriteLine(doc.ToString());
+
+            doc.Restore(history.Pop());
+            Console.WriteLine(doc.ToString());
+
 
         }
         static void Behavioral_Iterator()
