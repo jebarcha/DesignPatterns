@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Behavioral\Observer\Observer.csproj" />
     <ProjectReference Include="..\Behavioral\State\State.csproj" />
     <ProjectReference Include="..\Behavioral\Strategy\Strategy.csproj" />
+    <ProjectReference Include="..\Behavioral\TemplateMethod\TemplateMethod.csproj" />
     <ProjectReference Include="..\Behavioral\Visitor\Visitor.csproj" />
     <ProjectReference Include="..\Structural\Adapter\Adapter.csproj" />
     <ProjectReference Include="..\Structural\Composite\Composite.csproj" />

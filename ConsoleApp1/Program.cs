@@ -18,6 +18,8 @@ using Proxy;
 using Proxy.Demo2;
 using Memento;
 using Memento.Demo2;
+using TemplateMethod;
+using TemplateMethod.Demo2;
 
 namespace ConsoleApp1
 {
@@ -38,8 +40,10 @@ namespace ConsoleApp1
             //Behavioral_VisitorDemo2();
 
             //Behavioral_Memento();
-            Behavioral_MementoDemo2();
+            //Behavioral_MementoDemo2();
 
+            //Behavioral_TemplateMethod();
+            Behavioral_TemplateMethodDemo2();
 
             // Structural ***********************************************
             //Structural_Facade();
@@ -256,6 +260,20 @@ namespace ConsoleApp1
         }
         static void Behavioral_TemplateMethod()
         {
+            // Transfer Money
+            // Generate Report
+            var task = new TransferMoneyTask();
+            task.execute();
+
+            var report = new GenerateReportTask();
+            report.execute();
+
+        }
+        static void Behavioral_TemplateMethodDemo2() 
+        {
+            var chatWindow = new ChatWindow();
+
+            chatWindow.close();
 
         }
         static void Behavioral_Command()
