@@ -6,6 +6,6 @@ namespace Adapter
 {
     public interface IFilter
     {
-        public void apply(Image image);
+        public void Apply(Image image);
     }
 }

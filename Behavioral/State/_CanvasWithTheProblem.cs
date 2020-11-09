@@ -14,7 +14,7 @@ namespace State
         // or We want the method perform different code depending on the selected tool
 
         private ToolType currentTool;
-        public void mouseDown() 
+        public void MouseDown() 
         {
             if (currentTool == ToolType.SELECTION)
             {
@@ -29,7 +29,7 @@ namespace State
                 Console.WriteLine("Brush eraser");
             }
         }
-        public void mouseUp()
+        public void MouseUp()
         {
             if (currentTool == ToolType.SELECTION)
             {
@@ -45,7 +45,7 @@ namespace State
             }
         }
 
-        public ToolType getCurrentTool() 
+        public ToolType GetCurrentTool() 
         {
             return currentTool;
         }

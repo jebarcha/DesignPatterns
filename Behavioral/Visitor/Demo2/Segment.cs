@@ -6,7 +6,7 @@ namespace Visitor.Demo2
 {
     public abstract class Segment
     {
-        public abstract void applyFilter(IAudioFilter filter);
+        public abstract void ApplyFilter(IAudioFilter filter);
 
     }
 }

@@ -6,7 +6,7 @@ namespace Observer
 {
     public class PushSpreadSheet : IPushObserver
     {
-        public void update(int value)
+        public void Update(int value)
         {
             Console.WriteLine("Spreadsheet got notified: " + value);
         }

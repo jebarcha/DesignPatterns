@@ -6,6 +6,6 @@ namespace Observer
 {
     public interface IPushObserver
     {
-        public void update(int value);   // we can have objects, but for simplicity we're using int type.
+        public void Update(int value);   // we can have objects, but for simplicity we're using int type.
     }
 }

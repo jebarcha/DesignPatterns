@@ -6,7 +6,7 @@ namespace Strategy
 {
     public class BlackAndWhiteFilter : IFilter
     {
-        public void apply(string fileName)
+        public void Apply(string fileName)
         {
             Console.WriteLine("Apply B&W filter");
         }

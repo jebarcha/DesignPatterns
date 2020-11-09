@@ -6,12 +6,12 @@ namespace Visitor
 {
     public class PlainTextOperation : IOperation
     {
-        public void apply(HeadingNode heading)
+        public void Apply(HeadingNode heading)
         {
             Console.WriteLine("text-heading");
         }
 
-        public void apply(AnchorNode anchor)
+        public void Apply(AnchorNode anchor)
         {
             Console.WriteLine("text-anchor");
         }

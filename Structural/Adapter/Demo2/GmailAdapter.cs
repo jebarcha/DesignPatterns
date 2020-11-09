@@ -7,11 +7,11 @@ namespace Adapter.Demo2
     public class GmailAdapter : IEmailProvider
     {
         private GmailClient gmailClient = new GmailClient();
-        public void downloadEmails()
+        public void DownloadEmails()
         {
-            gmailClient.connect();
-            gmailClient.getEmails();
-            gmailClient.disconnect();
+            gmailClient.Connect();
+            gmailClient.GetEmails();
+            gmailClient.Disconnect();
         }
     }
 }

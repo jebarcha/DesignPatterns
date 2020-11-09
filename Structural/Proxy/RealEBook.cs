@@ -9,19 +9,19 @@ namespace Proxy
         public RealEBook(string fileName)
         {
             this.fileName = fileName;
-            load();
+            Load();
         }
 
-        private void load()
+        private void Load()
         {
             Console.WriteLine("Loading the ebook " + fileName);
         }
 
-        public void show()
+        public void Show()
         {
             Console.WriteLine("Showing the ebook " + fileName);
         }
-        public String getFileName()
+        public String GetFileName()
         {
             return fileName;
         }

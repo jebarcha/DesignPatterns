@@ -6,12 +6,12 @@ namespace Visitor.Demo2
 {
     public class NormalizeFilter : IAudioFilter
     {
-        public void apply(FormatSegment formatSegment)
+        public void Apply(FormatSegment formatSegment)
         {
             Console.WriteLine("Normalize on format segment");
         }
 
-        public void apply(FactSegment factSegment)
+        public void Apply(FactSegment factSegment)
         {
             Console.WriteLine("Normalize on fact segment");
         }

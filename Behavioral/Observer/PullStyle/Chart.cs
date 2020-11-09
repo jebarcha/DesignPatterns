@@ -11,9 +11,9 @@ namespace Observer
         {
             this.dataSource = dataSource;
         }
-        public void update()
+        public void Update()
         {
-            Console.WriteLine("Chart got Updated: " + dataSource.getValue());
+            Console.WriteLine("Chart got Updated: " + dataSource.GetValue());
         }
     }
 }

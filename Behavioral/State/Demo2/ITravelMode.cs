@@ -6,7 +6,7 @@ namespace State
 {
     public interface ITravelMode
     {
-        public Object getEta();
-        public Object getDirection();
+        public Object GetEta();
+        public Object GetDirection();
     }
 }

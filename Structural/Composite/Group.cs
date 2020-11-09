@@ -9,24 +9,24 @@ namespace Composite
         // the group class can have zero o more shapes
         private List<IComponent> components = new List<IComponent>();
 
-        public void add(IComponent shape)
+        public void Add(IComponent shape)
         {
             components.Add(shape);
         }
 
-        public void move()
+        public void Move()
         {
             foreach (var component in components)
             {
-                component.move();
+                component.Move();
             }
         }
 
-        public void render()
+        public void Render()
         { 
             foreach(var component in components) 
             {
-                component.render();
+                component.Render();
             }
 
             // We do not have to check the type and cast

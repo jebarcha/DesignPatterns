@@ -6,7 +6,7 @@ namespace Adapter
 {
     public class VividFilter : IFilter
     {
-        public void apply(Image image)
+        public void Apply(Image image)
         {
             Console.WriteLine("Apply vivid filter to " + image);
         }

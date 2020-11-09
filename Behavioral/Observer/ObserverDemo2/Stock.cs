@@ -16,31 +16,31 @@ namespace Observer.ObserverDemo2
             this.price = price;
         }
 
-        public void addObserver(IObserver observer)
+        public void AddObserver(IObserver observer)
         {
             observers.Add(observer);
         }
 
-        public void removeObserver(IObserver observer)
+        public void RemoveObserver(IObserver observer)
         {
             observers.Remove(observer);
         }
 
-        public void notifyObservers()
+        public void NotifyObservers()
         {
             foreach (var observer in observers)
-                observer.priceChanged();
+                observer.PriceChanged();
         }
 
-        public float getPrice()
+        public float GetPrice()
         {
             return price;
         }
 
-        public void setPrice(float price)
+        public void SetPrice(float price)
         {
             this.price = price;
-            notifyObservers();
+            NotifyObservers();
         }
 
         public String toString()

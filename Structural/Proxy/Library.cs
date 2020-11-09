@@ -7,14 +7,14 @@ namespace Proxy
     public class Library
     {
         private Dictionary<String, IEBook> ebooks = new Dictionary<String, IEBook>();
-        public void add(IEBook ebook) 
+        public void Add(IEBook ebook) 
         {
-            ebooks.Add(ebook.getFileName(), ebook);
+            ebooks.Add(ebook.GetFileName(), ebook);
         }
 
-        public void openEbook(String fileName) 
+        public void OpenEbook(String fileName) 
         {
-            ebooks[fileName].show();
+            ebooks[fileName].Show();
         }
     }
 }

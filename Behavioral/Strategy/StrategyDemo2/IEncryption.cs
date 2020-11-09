@@ -6,6 +6,6 @@ namespace Strategy
 {
     public interface IEncryption
     {
-        public String encrypt(String text);
+        public String Encrypt(String text);
     }
 }

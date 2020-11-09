@@ -6,7 +6,7 @@ namespace Facade.Demo2
 {
     public class TwitterClient
     {
-        public List<Tweet> getRecentTweets(String accessToken)
+        public List<Tweet> GetRecentTweets(String accessToken)
         {
             Console.WriteLine("Getting recent tweets");
 

@@ -6,6 +6,6 @@ namespace Composite.Demo2
 {
     public interface Resource
     {
-        public void deploy();
+        public void Deploy();
     }
 }

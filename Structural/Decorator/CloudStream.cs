@@ -4,7 +4,7 @@ namespace Decorator
 {
     public class CloudStream : IStream
     {
-        public void write(string data)
+        public void Write(string data)
         {
             Console.WriteLine("Storing " + data);
         }

@@ -2,7 +2,7 @@
 {
     public interface IEBook
     {
-        string getFileName();
-        void show();
+        string GetFileName();
+        void Show();
     }
 }

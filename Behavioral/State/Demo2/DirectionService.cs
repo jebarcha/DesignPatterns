@@ -11,19 +11,19 @@ namespace State
         {
             this.travelMode = travelMode;
         }
-        public Object getEta()
+        public Object GetEta()
         {
-            return travelMode.getEta();
+            return travelMode.GetEta();
         }
-        public Object getDirection()
+        public Object GetDirection()
         {
-            return travelMode.getDirection();
+            return travelMode.GetDirection();
         }
-        public ITravelMode getTravelMode()
+        public ITravelMode GetTravelMode()
         {
             return travelMode;
         }
-        public void setTravelMode(ITravelMode travelMode)
+        public void SetTravelMode(ITravelMode travelMode)
         {
             this.travelMode = travelMode;
         }

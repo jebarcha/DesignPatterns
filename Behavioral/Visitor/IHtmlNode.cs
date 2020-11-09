@@ -6,6 +6,6 @@ namespace Visitor
 {
     public interface IHtmlNode
     {
-        public void execute(IOperation operation);  
+        public void Execute(IOperation operation);  
     }
 }

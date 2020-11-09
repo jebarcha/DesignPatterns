@@ -15,7 +15,7 @@ namespace Strategy
         // Here is violating the SRP because it is encrypting the message and also sending the message as well.
         // Also OCP because if we want to add more encryption options would need to modify the class
 
-        public void send(String message)
+        public void Send(String message)
         {
             if (encryptionAlgorithm == "DES")
                 Console.WriteLine("Encrypting message using DES");

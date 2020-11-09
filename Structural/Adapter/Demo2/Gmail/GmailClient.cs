@@ -6,17 +6,17 @@ namespace Adapter.Demo2
 {
     public class GmailClient
     {
-        public void connect()
+        public void Connect()
         {
             Console.WriteLine("Connecting to Gmail");
         }
 
-        public void getEmails()
+        public void GetEmails()
         {
             Console.WriteLine("Downloading emails from Gmail");
         }
 
-        public void disconnect()
+        public void Disconnect()
         {
             Console.WriteLine("Disconnecting from Gmail");
         }

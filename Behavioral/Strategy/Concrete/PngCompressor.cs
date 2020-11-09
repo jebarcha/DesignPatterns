@@ -6,7 +6,7 @@ namespace Strategy
 {
     public class PngCompressor : ICompressor
     {
-        void ICompressor.compress(string fileName)
+        void ICompressor.Compress(string fileName)
         {
             Console.WriteLine("Compressing using PNG");
         }

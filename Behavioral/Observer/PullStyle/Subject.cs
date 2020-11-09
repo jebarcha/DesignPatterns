@@ -8,19 +8,19 @@ namespace Observer
     public class Subject
     {
         private List<IObserver> observers = new List<IObserver>();
-        public void addObserver(IObserver observer) 
+        public void AddObserver(IObserver observer) 
         {
             observers.Add(observer);
         }
-        public void removeObserver(IObserver observer)
+        public void RemoveObserver(IObserver observer)
         {
             observers.Remove(observer);
         }
-        public void notifyObservers()
+        public void NotifyObservers()
         {
             foreach (var observer in observers) 
             {
-                observer.update();
+                observer.Update();
             }
         }
 

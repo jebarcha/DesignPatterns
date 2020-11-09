@@ -12,7 +12,7 @@ namespace Memento
             this.content = content;
         }
 
-        public String getContent() 
+        public String GetContent() 
         {
             return content;
         }

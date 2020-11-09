@@ -12,9 +12,9 @@ namespace Observer
         {
             this.dataSource = dataSource;
         }
-        public void update()
+        public void Update()
         {
-            Console.WriteLine("Spreadsheet got notified: " + dataSource.getValue());
+            Console.WriteLine("Spreadsheet got notified: " + dataSource.GetValue());
         }
     }
 }

@@ -6,8 +6,8 @@ namespace State
 {
     public interface ITool
     {
-        public void mouseDown();
-        public void mouseUp();
+        public void MouseDown();
+        public void MouseUp();
 
     }
 }

@@ -6,11 +6,11 @@ namespace Strategy
 {
     public class ImageStorage
     {
-        public void store(String fileName, ICompressor compressor, IFilter filter) 
+        public void Store(String fileName, ICompressor compressor, IFilter filter) 
         {
-            compressor.compress(fileName);
+            compressor.Compress(fileName);
 
-            filter.apply(fileName);
+            filter.Apply(fileName);
 
         }
     }

@@ -6,6 +6,6 @@ namespace Strategy
 {
     public interface IFilter
     {
-        public void apply(String fileName);
+        public void Apply(String fileName);
     }
 }

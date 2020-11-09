@@ -14,19 +14,19 @@ namespace Proxy
             this.fileName = fileName;
         }
 
-        public string getFileName()
+        public string GetFileName()
         {
             return fileName;
         }
 
-        public void show()
+        public void Show()
         {
             if (ebook == null) 
             {
                 ebook = new RealEBook(fileName);
             }
             Console.WriteLine("Logging");
-            ebook.show();
+            ebook.Show();
         }
     }
 }

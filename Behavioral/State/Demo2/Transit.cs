@@ -6,13 +6,13 @@ namespace State
 {
     public class Transit : ITravelMode
     {
-        public object getDirection()
+        public object GetDirection()
         {
             Console.WriteLine("Calculating ETA (transit)");
             return 3;
         }
 
-        public object getEta()
+        public object GetEta()
         {
             Console.WriteLine("Calculating Direction (transit)");
             return 3;

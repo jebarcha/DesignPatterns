@@ -6,7 +6,7 @@ namespace Composite.Demo2
 {
     public class Truck: Resource
     {
-        public void deploy()
+        public void Deploy()
         {
             Console.WriteLine("Deploying a truck");
         }

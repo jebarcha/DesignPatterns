@@ -6,12 +6,12 @@ namespace State
 {
     public class EraserTool : ITool
     {
-        public void mouseDown()
+        public void MouseDown()
         {
             Console.WriteLine("Eraser icon");
         }
 
-        public void mouseUp()
+        public void MouseUp()
         {
             Console.WriteLine("Erase something");
         }

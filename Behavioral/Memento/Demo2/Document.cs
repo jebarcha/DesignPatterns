@@ -16,9 +16,9 @@ namespace Memento.Demo2
         }
         public void Restore(DocumentMemento memento)
         {
-            this.content = memento.getContent();
-            this.fontName = memento.getFontName();
-            this.fontSize = memento.getFontSize();
+            this.content = memento.GetContent();
+            this.fontName = memento.GetFontName();
+            this.fontSize = memento.GetFontSize();
         }
 
         public String GetContent()

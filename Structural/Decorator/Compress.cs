@@ -12,13 +12,13 @@ namespace Decorator
             this.stream = stream;
         }
 
-        public void write(string data)
+        public void Write(string data)
         {
-            var compressed = compress(data);
-            stream.write(compressed);
+            var compressed = Compress1(data);
+            stream.Write(compressed);
         }
 
-        private String compress(String data)
+        private String Compress1(String data)
         {
             return data.Substring(0, 5);
         }

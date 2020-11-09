@@ -9,15 +9,15 @@ namespace TemplateMethod.Demo2
         public void close()
         {
             // custom windows may need to execute some code before the window is closed.
-            onClosing();
+            OnClosing();
 
             Console.WriteLine("Removing the window from the screen");
 
             // custom windows may need to execute some code after the window is closed.
-            onClosed();
+            OnClosed();
         }
 
-        protected abstract void onClosing();
-        protected abstract void onClosed();
+        protected abstract void OnClosing();
+        protected abstract void OnClosed();
     }
 }

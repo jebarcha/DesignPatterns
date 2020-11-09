@@ -11,9 +11,9 @@ namespace Strategy
         {
             this.encryptionAlgorithm = encryptionAlgorithm;
         }
-        public void send(String message)
+        public void Send(String message)
         {
-            var encryptedResult = encryptionAlgorithm.encrypt(message);
+            var encryptedResult = encryptionAlgorithm.Encrypt(message);
 
             Console.WriteLine("Sending the encrypted message...");
         }

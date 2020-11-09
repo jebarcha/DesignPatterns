@@ -6,9 +6,9 @@ namespace Visitor.Demo2
 {
     public class FormatSegment: Segment
     {
-        public override void applyFilter(IAudioFilter filter)
+        public override void ApplyFilter(IAudioFilter filter)
         {
-            filter.apply(this);
+            filter.Apply(this);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Visitor.Demo2
     {
         private List<Segment> segments = new List<Segment>();
 
-        public static WavFile read(String fileName)
+        public static WavFile Read(String fileName)
         {
             // Simulate reading a wav file and building the segments
             var wavFile = new WavFile();
@@ -21,10 +21,10 @@ namespace Visitor.Demo2
             return wavFile;
         }
 
-        public void applyFilter(IAudioFilter filter)
+        public void ApplyFilter(IAudioFilter filter)
         {
             foreach (var segment in segments)
-                segment.applyFilter(filter);
+                segment.ApplyFilter(filter);
         }
     }
 }

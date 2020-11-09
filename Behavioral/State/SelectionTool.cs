@@ -6,12 +6,12 @@ namespace State
 {
     public class SelectionTool : ITool
     {
-        public void mouseDown()
+        public void MouseDown()
         {
             Console.WriteLine("Selection icon");
         }
 
-        public void mouseUp()
+        public void MouseUp()
         {
             Console.WriteLine("Draw a dashed rectangle");
         }

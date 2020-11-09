@@ -12,13 +12,13 @@ namespace Decorator
             this.stream = stream;
         }
 
-        public void write(string data)
+        public void Write(string data)
         {
-            var encrypted = encrypt(data);
-            stream.write(encrypted);
+            var encrypted = Encrypt(data);
+            stream.Write(encrypted);
         }
 
-        private String encrypt(String data) 
+        private String Encrypt(String data) 
         {
             return "234asdf%345346";
         }

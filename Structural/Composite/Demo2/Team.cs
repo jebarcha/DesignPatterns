@@ -8,15 +8,15 @@ namespace Composite.Demo2
     {
         private List<Resource> resources = new List<Resource>();
 
-        public void add(Resource resource)
+        public void Add(Resource resource)
         {
             resources.Add(resource);
         }
 
-        public void deploy()
+        public void Deploy()
         {
             foreach (var resource in resources)
-                resource.deploy();
+                resource.Deploy();
         }
 
 

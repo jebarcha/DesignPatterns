@@ -14,17 +14,17 @@ namespace Proxy.Demo2
             this.id = id;
         }
 
-        public int getId()
+        public int GetId()
         {
             return id;
         }
 
-        public String getName()
+        public String GetName()
         {
             return name;
         }
 
-        public void setName(String name)
+        public void SetName(String name)
         {
             this.name = name;
         }

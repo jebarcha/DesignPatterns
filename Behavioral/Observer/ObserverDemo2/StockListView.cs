@@ -8,22 +8,22 @@ namespace Observer.ObserverDemo2
     {
         private List<Stock> stocks = new List<Stock>();
 
-        public void addStock(Stock stock)
+        public void AddStock(Stock stock)
         {
             stocks.Add(stock);
-            stock.addObserver(this);
+            stock.AddObserver(this);
         }
 
-        public void show()
+        public void Show()
         {
             Console.WriteLine("Stock List View");
             foreach (var stock in stocks)
                 Console.WriteLine(stock);
         }
-        public void priceChanged()
+        public void PriceChanged()
         {
             Console.WriteLine("Price Changed - Refreshing StockListView");
-            show();
+            Show();
         }
     }
 }

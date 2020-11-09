@@ -8,7 +8,7 @@ namespace State
     {
         private TravelMode travelMode;
 
-        public Object getEta()
+        public Object GetEta()
         {
             if (travelMode == TravelMode.DRIVING)
             {
@@ -32,7 +32,7 @@ namespace State
             }
         }
 
-        public Object getDirection()
+        public Object GetDirection()
         {
             if (travelMode == TravelMode.DRIVING)
             {
@@ -56,12 +56,12 @@ namespace State
             }
         }
 
-        public TravelMode getTravelMode()
+        public TravelMode GetTravelMode()
         {
             return travelMode;
         }
 
-        public void setTravelMode(TravelMode travelMode)
+        public void SetTravelMode(TravelMode travelMode)
         {
             this.travelMode = travelMode;
         }

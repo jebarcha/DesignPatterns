@@ -7,16 +7,16 @@ namespace Visitor
     {
         private List<IHtmlNode> nodes = new List<IHtmlNode>();
 
-        public void add(IHtmlNode node) 
+        public void Add(IHtmlNode node) 
         {
             nodes.Add(node);
         }
 
-        public void execute(IOperation operation) 
+        public void Execute(IOperation operation) 
         {
             foreach (var node in nodes) 
             {
-                node.execute(operation);
+                node.Execute(operation);
             }
         }
 

@@ -6,7 +6,7 @@ namespace Strategy
 {
     public class DESEncryption: IEncryption
     {
-        public String encrypt(String text)
+        public String Encrypt(String text)
         {
             Console.WriteLine("Encrypting message using DES");
             return "EncryptedTextDemoDES";

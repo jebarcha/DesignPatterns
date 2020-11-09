@@ -6,6 +6,6 @@ namespace Decorator
 {
     public interface IStream
     {
-        public void write(String data);
+        public void Write(String data);
     }
 }

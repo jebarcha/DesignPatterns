@@ -8,15 +8,15 @@ namespace Adapter.Demo2
     {
         private List<IEmailProvider> providers = new List<IEmailProvider>();
 
-        public void addProvider(IEmailProvider provider)
+        public void AddProvider(IEmailProvider provider)
         {
             providers.Add(provider);
         }
 
-        public void downloadEmails()
+        public void DownloadEmails()
         {
             foreach (var provider in providers)
-                provider.downloadEmails();
+                provider.DownloadEmails();
         }
     }
 }

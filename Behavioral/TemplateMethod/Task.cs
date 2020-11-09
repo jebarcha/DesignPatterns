@@ -11,18 +11,18 @@ namespace TemplateMethod
         {
             auditTrail = new AuditTrail();
         }
-         public Task(AuditTrail auditTrail)
+        public Task(AuditTrail auditTrail)
         {
             this.auditTrail = auditTrail;
         }
 
-        public void execute() 
+        public void Execute() 
         {
             auditTrail.Record();
 
-            doExecute();
+            DoExecute();
         }
 
-        protected abstract void doExecute();
+        protected abstract void DoExecute();
     }
 }

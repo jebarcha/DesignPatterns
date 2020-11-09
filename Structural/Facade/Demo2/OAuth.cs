@@ -6,13 +6,13 @@ namespace Facade.Demo2
 {
     public class OAuth
     {
-        public String requestToken(String appKey, String appSecret)
+        public String RequestToken(String appKey, String appSecret)
         {
             Console.WriteLine("Get a request token");
             return "requestToken";
         }
 
-        public String getAccessToken(String requestToken)
+        public String GetAccessToken(String requestToken)
         {
             Console.WriteLine("Get an access token");
             return "accessToken";

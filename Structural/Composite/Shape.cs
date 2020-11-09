@@ -4,12 +4,12 @@ namespace Composite
 {
     public class Shape: IComponent
     {
-        public void move()
+        public void Move()
         {
             Console.WriteLine("move Share");
         }
 
-        public void render() 
+        public void Render() 
         {
             Console.WriteLine("Render Shape");
         }

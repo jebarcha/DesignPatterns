@@ -6,13 +6,13 @@ namespace Adapter //.ThirdPartyFilters
 {
     public class Caramel
     {
-        public void init() 
+        public void Init() 
         {
             // to use this library we need to call first init() method
 
         }
 
-        public void render(Image image) 
+        public void Render(Image image) 
         {
             Console.WriteLine("Apply caramel filter");
         }

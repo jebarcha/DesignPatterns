@@ -6,7 +6,7 @@ namespace TemplateMethod
 {
     public class GenerateReportTask: Task
     {
-        protected override void doExecute()
+        protected override void DoExecute()
         {
             Console.WriteLine("Generate Report");
         }

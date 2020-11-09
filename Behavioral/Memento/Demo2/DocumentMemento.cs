@@ -17,17 +17,17 @@ namespace Memento.Demo2
             this.fontSize = fontSize;
         }
 
-        public String getContent()
+        public String GetContent()
         {
             return content;
         }
 
-        public String getFontName()
+        public String GetFontName()
         {
             return fontName;
         }
 
-        public int getFontSize()
+        public int GetFontSize()
         {
             return fontSize;
         }

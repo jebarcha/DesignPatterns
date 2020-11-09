@@ -6,6 +6,6 @@ namespace Adapter.Demo2
 {
     public interface IEmailProvider
     {
-        void downloadEmails();
+        void DownloadEmails();
     }
 }

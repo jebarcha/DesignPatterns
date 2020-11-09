@@ -6,8 +6,8 @@ namespace Composite
 {
     public interface IComponent
     {
-        public void render();
-        public void move();
+        public void Render();
+        public void Move();
 
     }
 }

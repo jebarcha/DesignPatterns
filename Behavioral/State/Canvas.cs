@@ -7,21 +7,21 @@ namespace State
         // We need to allow Canvas behave differently according the current tool
 
         private ITool currentTool;
-        public void mouseDown() 
+        public void MouseDown() 
         {
-            currentTool.mouseDown();
+            currentTool.MouseDown();
         }
-        public void mouseUp()
+        public void MouseUp()
         {
-            currentTool.mouseUp();
+            currentTool.MouseUp();
         }
 
-        public ITool getCurrentTool() 
+        public ITool GetCurrentTool() 
         {
             return currentTool;
         }
 
-        public void setCurrentTool(ITool currentTool) 
+        public void SetCurrentTool(ITool currentTool) 
         {
             this.currentTool = currentTool;
         } 

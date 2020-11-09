@@ -6,7 +6,7 @@ namespace Strategy
 {
     public class JpegCompressor : ICompressor
     {
-        public void compress(string fileName)
+        public void Compress(string fileName)
         {
             Console.WriteLine("Compressing using JPEG");
         }

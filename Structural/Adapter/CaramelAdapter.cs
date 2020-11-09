@@ -11,10 +11,10 @@ namespace Adapter
         // So we use inheritance to implment an adapter
         // However this approach is not as flexible as using composition
         // because in C# or Java We don't have multiple inheritance (means a class only can have a single parent)
-        public void apply(Image image)
+        public void Apply(Image image)
         {
-            init();
-            render(image);
+            Init();
+            Render(image);
         }
     }
 }

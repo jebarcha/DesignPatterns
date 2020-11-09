@@ -11,16 +11,16 @@ namespace Memento
         }
         public void Restore(EditorState state) 
         {
-            content = state.getContent();
+            content = state.GetContent();
         }
 
 
 
-        public String getContent()
+        public String GetContent()
         {
             return content;
         }
-        public void setContent(String content) 
+        public void SetContent(String content) 
         {
             this.content = content;
         }

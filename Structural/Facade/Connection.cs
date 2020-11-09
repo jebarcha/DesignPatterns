@@ -6,7 +6,7 @@ namespace Facade
 {
     public class Connection
     {
-        public void disconnect() 
+        public void Disconnect() 
         {
             
         }

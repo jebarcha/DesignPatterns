@@ -6,6 +6,6 @@ namespace Observer.ObserverDemo2
 {
     public interface IObserver
     {
-        public void priceChanged();
+        public void PriceChanged();
     }
 }

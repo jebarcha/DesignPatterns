@@ -15,19 +15,19 @@ namespace Facade.Demo2
             this.secret = secret;
         }
 
-        public List<Tweet> getRecentTweets()
+        public List<Tweet> GetRecentTweets()
         {
             var twitterClient = new TwitterClient();
-            var tweets = twitterClient.getRecentTweets(getAccessToken());
+            var tweets = twitterClient.GetRecentTweets(GetAccessToken());
 
             return tweets;
         }
 
-        private String getAccessToken()
+        private String GetAccessToken()
         {
             var oauth = new OAuth();
-            var requestToken = oauth.requestToken(appKey, secret);
-            var accessToken = oauth.getAccessToken(requestToken);
+            var requestToken = oauth.RequestToken(appKey, secret);
+            var accessToken = oauth.GetAccessToken(requestToken);
 
             return accessToken;
         }

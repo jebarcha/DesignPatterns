@@ -17,10 +17,10 @@ namespace Adapter
             this.caramel = caramel;
         }
 
-        public void apply(Image image)
+        public void Apply(Image image)
         {
-            this.caramel.init();
-            this.caramel.render(image);
+            this.caramel.Init();
+            this.caramel.Render(image);
         }
     }
 }

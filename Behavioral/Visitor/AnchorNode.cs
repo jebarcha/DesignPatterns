@@ -6,9 +6,9 @@ namespace Visitor
 {
     public class AnchorNode : IHtmlNode
     {
-        public void execute(IOperation operation)
+        public void Execute(IOperation operation)
         {
-            operation.apply(this);
+            operation.Apply(this);
         }
     }
 }

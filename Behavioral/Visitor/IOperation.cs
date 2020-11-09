@@ -8,7 +8,7 @@ namespace Visitor
     // We should use this patter if our object structure is very stable
     public interface IOperation
     {
-        public void apply(HeadingNode heading);
-        public void apply(AnchorNode anchor);
+        public void Apply(HeadingNode heading);
+        public void Apply(AnchorNode anchor);
     }
 }

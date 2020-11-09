@@ -13,11 +13,11 @@ namespace Proxy.Demo2
             this.context = context;
         }
 
-        public void setName(String name)
+        public void SetName(String name)
         {
-            base.setName(name);
+            base.SetName(name);
 
-            context.markAsChanged(this);
+            context.MarkAsChanged(this);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Observer
 {
     public class PushChart : IPushObserver
     {
-        public void update(int value)
+        public void Update(int value)
         {
             Console.WriteLine("Chart got Updated: " + value);
         }

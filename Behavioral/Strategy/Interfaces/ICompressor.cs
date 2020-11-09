@@ -7,7 +7,7 @@ namespace Strategy
     public interface ICompressor
     {
         // byte[] compress(byte[] image);
-        public void compress(String fileName);
+        public void Compress(String fileName);
  
     }
 }

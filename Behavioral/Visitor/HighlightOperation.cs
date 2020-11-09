@@ -6,12 +6,12 @@ namespace Visitor
 {
     public class HighlightOperation : IOperation
     {
-        public void apply(HeadingNode heading)
+        public void Apply(HeadingNode heading)
         {
             Console.WriteLine("highlight heading");
         }
 
-        public void apply(AnchorNode anchor)
+        public void Apply(AnchorNode anchor)
         {
             Console.WriteLine("highlight anchor");
         }

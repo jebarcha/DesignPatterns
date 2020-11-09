@@ -13,9 +13,9 @@ namespace Adapter
             this.image = image;
         }
 
-        public void apply(IFilter filter)
+        public void Apply(IFilter filter)
         {
-            filter.apply(image);
+            filter.Apply(image);
         }
     }
 }

@@ -9,14 +9,14 @@ namespace Observer
 
         private int value;
 
-        public int getValue() 
+        public int GetValue() 
         {
             return value;
         }
-        public void setValue(int value) 
+        public void SetValue(int value) 
         {
             this.value = value;
-            notifyObservers();
+            NotifyObservers();
         }
 
     }

@@ -8,19 +8,19 @@ namespace Observer
     public class PushSubject
     {
         private List<IPushObserver> observers = new List<IPushObserver>();
-        public void addObserver(IPushObserver observer) 
+        public void AddObserver(IPushObserver observer) 
         {
             observers.Add(observer);
         }
-        public void removeObserver(IPushObserver observer)
+        public void RemoveObserver(IPushObserver observer)
         {
             observers.Remove(observer);
         }
-        public void notifyObservers(int value)  // we can pass objects, but for simplicity we're using int type.
+        public void NotifyObservers(int value)  // we can pass objects, but for simplicity we're using int type.
         {
             foreach (var observer in observers) 
             {
-                observer.update(value);
+                observer.Update(value);
             }
         }
 

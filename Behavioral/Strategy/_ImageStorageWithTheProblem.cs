@@ -18,7 +18,7 @@ namespace Strategy
         // It is violating the SRP because it is also compressing and applying filter
         // Also is violating OCP because We would have to modify the class to add more options for compressing or filters
 
-        public void store(String fileName) 
+        public void Store(String fileName) 
         { 
             if (_compressor == "jpeg") 
             {
