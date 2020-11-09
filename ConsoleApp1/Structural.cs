@@ -1,5 +1,6 @@
 ﻿using Adapter;
 using Adapter.Demo2;
+using Bridge;
 using Composite;
 using Composite.Demo2;
 using Decorator;
@@ -16,7 +17,7 @@ namespace ConsoleApp1
 {
     static class Structural
     {
-        static void Structural_Adapter()
+        public static void Structural_Adapter()
         {
             var imageView = new ImageView(new Image());
             imageView.Apply(new VividFilter());
@@ -27,7 +28,7 @@ namespace ConsoleApp1
             imageView.Apply(new CaramelFilter(new Caramel()));
 
         }
-        static void Structural_AdapterDemo2()
+        public static void Structural_AdapterDemo2()
         {
             var emailClient = new EmailClient();
             //emailClient.addProvider(new GmailClient());
@@ -35,7 +36,7 @@ namespace ConsoleApp1
             emailClient.DownloadEmails();
 
         }
-        static void Structural_Composite()
+        public static void Structural_Composite()
         {
             var group1 = new Group();
             group1.Add(new Shape()); // our imaginary square
@@ -54,7 +55,7 @@ namespace ConsoleApp1
 
 
         }
-        static void Structural_CompositeDemo2()
+        public static void Structural_CompositeDemo2()
         {
             var subTeam1 = new Team();
             subTeam1.Add(new Truck());
@@ -72,7 +73,7 @@ namespace ConsoleApp1
 
             team.Deploy();
         }
-        static void Structural_Proxy()
+        public static void Structural_Proxy()
         {
             // in this implementation we are loadin 3 ebooks in memory and open 1
             // the problem would be if we have hundreds or thousends of ebooks, we should not load all them in memory because it is costly
@@ -92,7 +93,7 @@ namespace ConsoleApp1
             library.OpenEbook("b");
 
         }
-        static void Structural_ProxyDemo2()
+        public static void Structural_ProxyDemo2()
         {
             //var dbContext = new DbContext();
 
@@ -122,11 +123,11 @@ namespace ConsoleApp1
             dbContext.SaveChanges();
 
         }
-        static void Structural_FlyWeight()
+        public static void Structural_FlyWeight()
         {
 
         }
-        static void Structural_Facade()
+        public static void Structural_Facade()
         {
             // for the facade patter we introduce a new class to encapsulate all below logic:
             //var server = new NotificationServer1();
@@ -139,7 +140,7 @@ namespace ConsoleApp1
             var service = new NotificationService();
             service.send("Hello World", "target");
         }
-        static void Structural_FacadeDemo2()
+        public static void Structural_FacadeDemo2()
         {
             //var oauth = new OAuth();
             //var requestToken = oauth.requestToken("appKey", "secret");
@@ -151,11 +152,26 @@ namespace ConsoleApp1
             var twitterAPI = new TwitterAPI("appKey", "secret");
             var tweets = twitterAPI.GetRecentTweets();
         }
-        static void Structural_Bridge()
+        public static void Structural_Bridge()
         {
+            var remoteControl = new RemoteControl(new SonyTV());
+            remoteControl.TurnOn();
+
+            // we want to use an advanced remote control
+            var advRemoteControl = new AdvancedRemoteControl(new SonyTV());
+            advRemoteControl.TurnOn();
+
+            // If we want a new brand, just add a new class that implements the IDevice interface
+            var remoteControlSamsung = new RemoteControl(new SamsungTV());
+            remoteControlSamsung.TurnOn();
+
+            // This is the Bridge pattern, We don't have to create several new classes and add them to our hierachy
+            // We use the Bridge pattern when we have a hierarchy that can grow in two different dimensions
+            // We can split a complex hierarchy into two separate hierarchies that can grow independently
+            // this makes our application design more extensible and maintainable.
 
         }
-        static void Structural_Decorator()
+        public static void Structural_Decorator()
         {
             //var cloudStream = new CloudStream();
             //cloudStream.write("Hello World!");
@@ -173,12 +189,12 @@ namespace ConsoleApp1
             storeCreditCard(new EncryptedCloudStream(new Compress(new CloudStream())));
 
         }
-        static void storeCreditCard(IStream stream)
+        public static void storeCreditCard(IStream stream)
         {
             // stream is transparent or invisible to storeCreditCard method, only needs a stream
             stream.Write("1234-1234-1234-1234");
         }
-        static void Structural_DecoratorDemo2()
+        public static void Structural_DecoratorDemo2()
         {
             var editor = new Editor();
             editor.openProject("...");

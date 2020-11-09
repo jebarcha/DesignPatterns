@@ -6,11 +6,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            ExecuteBehavioralDemos();
+            //ExecuteBehavioralDemos();
 
             ExecuteStructuralDemos();
 
-            ExecuteCreationalDemos();
+            //ExecuteCreationalDemos();
 
             End();
         }
@@ -57,6 +57,10 @@ namespace ConsoleApp1
 
             //Structural.Structural_Proxy();
             //Structural.Structural_ProxyDemo2();
+
+            Structural.Structural_Bridge();
+
+
         }
         static void ExecuteCreationalDemos() 
         { 

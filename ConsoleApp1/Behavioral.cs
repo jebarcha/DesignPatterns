@@ -16,7 +16,7 @@ namespace ConsoleApp1
 {
     static class Behavioral
     {
-        static void Behavioral_Strategy()
+        public static void Behavioral_Strategy()
         {
             var imageStorageJpeg = new ImageStorage();
             imageStorageJpeg.Store("aDemo", new JpegCompressor(), new BlackAndWhiteFilter());
@@ -33,7 +33,7 @@ namespace ConsoleApp1
             chatClient = new ChatClient(new DESEncryption());
             chatClient.Send("my demo message 2 DES");
         }
-        static void Behavioral_State()
+        public static void Behavioral_State()
         {
             // 1.  one by one
             //Console.WriteLine("Selection Tool------------------");
@@ -72,7 +72,7 @@ namespace ConsoleApp1
             }
 
         }
-        static void Behavioral_StateDemo2()
+        public static void Behavioral_StateDemo2()
         {
             //This was with the problem approach:
             //var directionService = new DirectionService();
@@ -88,7 +88,7 @@ namespace ConsoleApp1
 
         }
 
-        static void Behavioral_Observer()
+        public static void Behavioral_Observer()
         {
             var dataSource = new DataSource();
             var sheet1 = new SpreadSheet(dataSource);
@@ -102,7 +102,7 @@ namespace ConsoleApp1
             dataSource.SetValue(1);
 
         }
-        static void Behavioral_ObserverDemo2()
+        public static void Behavioral_ObserverDemo2()
         {
             var statusBar = new StatusBar();
             var stockListView = new StockListView();
@@ -127,7 +127,7 @@ namespace ConsoleApp1
             // is not watching this stock.)
             stock3.SetPrice(9);
         }
-        static void Behavioral_Visitor()
+        public static void Behavioral_Visitor()
         {
             var document = new HtmlDocument();
             document.Add(new HeadingNode());
@@ -139,7 +139,7 @@ namespace ConsoleApp1
 
             // If we need to add a new operation just create a new class that implements IOperation interface
         }
-        static void Behavioral_VisitorDemo2()
+        public static void Behavioral_VisitorDemo2()
         {
             var wavFile = WavFile.Read("myfile.wav");
             wavFile.ApplyFilter(new NoiseReductionFilter());
@@ -147,7 +147,7 @@ namespace ConsoleApp1
             wavFile.ApplyFilter(new NormalizeFilter());
         }
 
-        static void Behavioral_Memento()
+        public static void Behavioral_Memento()
         {
             var editor = new EditorM();
             var history = new History();
@@ -165,7 +165,7 @@ namespace ConsoleApp1
             Console.WriteLine(editor.GetContent());
 
         }
-        static void Behavioral_MementoDemo2()
+        public static void Behavioral_MementoDemo2()
         {
             var doc = new Document();
             var history = new DocHistory();
@@ -195,11 +195,11 @@ namespace ConsoleApp1
 
 
         }
-        static void Behavioral_Iterator()
+        public static void Behavioral_Iterator()
         {
 
         }
-        static void Behavioral_TemplateMethod()
+        public static void Behavioral_TemplateMethod()
         {
             // Transfer Money
             // Generate Report
@@ -217,19 +217,19 @@ namespace ConsoleApp1
             chatWindow.close();
 
         }
-        static void Behavioral_Command()
+        public static void Behavioral_Command()
         {
 
         }
-        static void Behavioral_Mediator()
+        public static void Behavioral_Mediator()
         {
 
         }
-        static void Behavioral_ChainOfResposibility()
+        public static void Behavioral_ChainOfResposibility()
         {
 
         }
-        static void Behavioral_Interpreter()
+        public static void Behavioral_Interpreter()
         {
 
         }
