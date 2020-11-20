@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Behavioral\ChainOfResponsibility\ChainOfResponsibility.csproj" />
     <ProjectReference Include="..\Behavioral\Memento\Memento.csproj" />
     <ProjectReference Include="..\Behavioral\Observer\Observer.csproj" />
     <ProjectReference Include="..\Behavioral\State\State.csproj" />

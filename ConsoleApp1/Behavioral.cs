@@ -1,4 +1,6 @@
-﻿using Memento;
+﻿using ChainOfResponsibility;
+using ChainOfResponsibility.Demo2;
+using Memento;
 using Memento.Demo2;
 using Observer;
 using Observer.ObserverDemo2;
@@ -227,7 +229,43 @@ namespace ConsoleApp1
         }
         public static void Behavioral_ChainOfResposibility()
         {
+            // authenticator -> logger -> compressor
+            //var compressor = new Compressor(null);
+            //var logger = new Logger(compressor);
+            //var authenticator = new Authenticator(logger);
+            //var server = new WebServer(authenticator);
+            //server.handle(new HttpRequest("admin", "1234"));
 
+            // ***with invalid user
+            // authenticator -> logger -> compressor
+            //var compressor = new Compressor(null);
+            //var logger = new Logger(compressor);
+            //var authenticator = new Authenticator(logger);
+            //var server = new WebServer(authenticator);
+            //server.handle(new HttpRequest("abcd", "1234"));
+
+
+            // ***with no logger: authenticator -> compressor
+            //var compressor = new Compressor(null);
+            //var authenticator = new Authenticator(compressor);
+            //var server = new WebServer(authenticator);
+            //server.handle(new HttpRequest("admin", "1234"));
+
+
+            // authenticator -> compressor -> encryptor
+            var encryptor = new Encryptor(null);
+            var compressor = new Compressor(encryptor);
+            var authenticator = new Authenticator(compressor);
+            var server = new WebServer(authenticator);
+            server.handle(new HttpRequest("admin", "1234"));
+        }
+        public static void Behavioral_ChainOfResponibilityDemo2() 
+        {
+            var reader = DataReaderFactory.GetDataReaderChain();
+            reader.Read("data.xls");
+            reader.Read("data.numbers");
+            reader.Read("data.qbw");
+            //reader.Read("data.jpg");
         }
         public static void Behavioral_Interpreter()
         {

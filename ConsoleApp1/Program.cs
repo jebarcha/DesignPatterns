@@ -6,9 +6,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //ExecuteBehavioralDemos();
+            ExecuteBehavioralDemos();
 
-            ExecuteStructuralDemos();
+            //ExecuteStructuralDemos();
 
             //ExecuteCreationalDemos();
 
@@ -38,7 +38,11 @@ namespace ConsoleApp1
             //Behavioral.Behavioral_MementoDemo2();
 
             //Behavioral.Behavioral_TemplateMethod();
-            Behavioral.Behavioral_TemplateMethodDemo2();
+            //Behavioral.Behavioral_TemplateMethodDemo2();
+
+            //Behavioral.Behavioral_ChainOfResposibility();
+            Behavioral.Behavioral_ChainOfResponibilityDemo2();
+
         }
         static void ExecuteStructuralDemos() 
         {
