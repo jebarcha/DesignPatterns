@@ -58,7 +58,10 @@ namespace ConsoleApp1
             //Structural.Structural_Proxy();
             //Structural.Structural_ProxyDemo2();
 
-            Structural.Structural_Bridge();
+            //Structural.Structural_Bridge();
+
+            //Structural.Structural_FlyWeight();
+            Structural.Structural_FlyWeightDemo2();
 
 
         }

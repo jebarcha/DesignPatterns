@@ -7,6 +7,8 @@ using Decorator;
 using Decorator.Demo2;
 using Facade;
 using Facade.Demo2;
+using FlyWeight;
+using FlyWeight.Demo2;
 using Proxy;
 using Proxy.Demo2;
 using System;
@@ -125,6 +127,27 @@ namespace ConsoleApp1
         }
         public static void Structural_FlyWeight()
         {
+            var service = new PointService(new PointIconFactory());
+            foreach (var point in service.GetPoints()) 
+            {
+                point.Draw();
+            }
+
+        }
+        public static void Structural_FlyWeightDemo2() 
+        {
+            //var sheet = new SpreadSheet();
+            //sheet.SetContent(0, 0, "Hello");
+            //sheet.SetContent(1, 0, "World");
+            //sheet.SetFontFamily(0, 0, "Arial");
+            //sheet.Render();
+
+            var contextFactory = new CellContextFactory();
+            var sheet = new SpreadSheet(contextFactory);
+            sheet.SetContent(0, 0, "Hello");
+            sheet.SetContent(1, 0, "World");
+            sheet.SetFontFamily(0, 0, "Arial");
+            sheet.Render();
 
         }
         public static void Structural_Facade()
