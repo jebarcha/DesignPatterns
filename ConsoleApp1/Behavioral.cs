@@ -1,5 +1,7 @@
 ﻿using ChainOfResponsibility;
 using ChainOfResponsibility.Demo2;
+using Iterator;
+using Iterator.Demo2;
 using Memento;
 using Memento.Demo2;
 using Observer;
@@ -199,6 +201,40 @@ namespace ConsoleApp1
         }
         public static void Behavioral_Iterator()
         {
+            var history = new BrowseHistory();
+            history.Push("a");
+            history.Push("b");
+            history.Push("c");
+
+            IIterator<String> iterator = history.CreateIterator();
+            while (iterator.HasNext()) 
+            {
+                var url = iterator.Current();
+                Console.WriteLine(url);
+                iterator.Next();
+            }
+
+            //for(var i=0; i < history.GetUrls().Count; i++) 
+            //{
+            //    var url = history.GetUrls()[i];
+            //    Console.WriteLine(url);
+            //}
+
+        }
+        public static void Behavioral_IteratorDemo2() 
+        {
+            var products = new ProductCollection();
+            products.Add(new Product(1, "a"));
+            products.Add(new Product(2, "b"));
+            products.Add(new Product(3, "c"));
+            products.Add(new Product(4, "d"));
+
+            var iterator = products.CreateIterator();
+            while (iterator.HasNext())
+            {
+                Console.WriteLine(iterator.Current());
+                iterator.Next();
+            }
 
         }
         public static void Behavioral_TemplateMethod()
