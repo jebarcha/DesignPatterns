@@ -44,7 +44,12 @@ namespace ConsoleApp1
             //Behavioral.Behavioral_ChainOfResponibilityDemo2();
 
             //Behavioral.Behavioral_Iterator();
-            Behavioral.Behavioral_IteratorDemo2();
+            //Behavioral.Behavioral_IteratorDemo2();
+
+            //Behavioral.Behavioral_Command();
+            //Behavioral.Behavioral_CommandComposite();
+            //Behavioral.Behavioral_CommandUndo();
+            Behavioral.Behavioral_CommandDemo2();
 
         }
         static void ExecuteStructuralDemos() 

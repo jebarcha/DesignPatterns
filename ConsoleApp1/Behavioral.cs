@@ -1,5 +1,7 @@
 ﻿using ChainOfResponsibility;
 using ChainOfResponsibility.Demo2;
+using Command;
+using Command.Demo2;
 using Iterator;
 using Iterator.Demo2;
 using Memento;
@@ -154,7 +156,7 @@ namespace ConsoleApp1
         public static void Behavioral_Memento()
         {
             var editor = new EditorM();
-            var history = new History();
+            var history = new Memento.History();
 
             editor.SetContent("A");
             history.Push(editor.CreateState());
@@ -207,7 +209,7 @@ namespace ConsoleApp1
             history.Push("c");
 
             IIterator<String> iterator = history.CreateIterator();
-            while (iterator.HasNext()) 
+            while (iterator.HasNext())
             {
                 var url = iterator.Current();
                 Console.WriteLine(url);
@@ -221,7 +223,7 @@ namespace ConsoleApp1
             //}
 
         }
-        public static void Behavioral_IteratorDemo2() 
+        public static void Behavioral_IteratorDemo2()
         {
             var products = new ProductCollection();
             products.Add(new Product(1, "a"));
@@ -257,9 +259,66 @@ namespace ConsoleApp1
         }
         public static void Behavioral_Command()
         {
-
+            var service = new CustomerService();
+            var command = new AddCustomerCommand(service);
+            var button = new Button(command);
+            button.Click();
         }
-        public static void Behavioral_Mediator()
+        public static void Behavioral_CommandComposite()
+        {
+            // This is a composite command
+            var composite = new CompositeCommand();
+            composite.Add(new ResizeCommand());
+            composite.Add(new BlackAndWhiteCommand());
+            composite.Execute();
+        }
+        public static void Behavioral_CommandUndo()
+        {
+            var history = new Command.Editor.History();
+            var document = new Command.Editor.HtmlDocument();
+            document.SetContent("Hello World!");
+
+            var boldCommand = new Command.Editor.BoldCommand(document, history);
+            boldCommand.Execute();
+            Console.WriteLine(document.GetContent());
+
+            //boldCommand.Unexecute();
+            //Console.WriteLine(document.GetContent());
+            var undoCommand = new Command.Editor.UndoCommand(history);
+            undoCommand.Execute();
+            Console.WriteLine(document.GetContent());
+        }
+
+        public static void Behavioral_CommandDemo2()
+        {
+            //var videoEditor = new VideoEditor();
+            //videoEditor.SetText("demo2 video text");
+            //videoEditor.SetContrast(0.7f);
+            //var result = videoEditor.ToString();
+            //Console.WriteLine(result);
+
+            var videoEditor = new VideoEditor();
+            var history = new Command.Demo2.History();
+
+            var setTextCommand = new SetTextCommand("Video Title", videoEditor, history);
+            setTextCommand.Execute();
+            Console.WriteLine("TEXT: " + videoEditor);
+
+            var setContrast = new SetContrastCommand(1, videoEditor, history);
+            setContrast.Execute();
+            Console.WriteLine("CONTRAST: " + videoEditor);
+
+            var undoCommand = new UndoCommand(history);
+            undoCommand.Execute();
+            Console.WriteLine("UNDO: " + videoEditor);
+
+            undoCommand.Execute();
+            Console.WriteLine("UNDO: " + videoEditor);
+
+            undoCommand.Execute();
+            Console.WriteLine("UNDO: " + videoEditor);
+        }
+    public static void Behavioral_Mediator()
         {
 
         }
