@@ -4,6 +4,7 @@ using Command;
 using Command.Demo2;
 using Iterator;
 using Iterator.Demo2;
+using Mediator;
 using Memento;
 using Memento.Demo2;
 using Observer;
@@ -261,7 +262,7 @@ namespace ConsoleApp1
         {
             var service = new CustomerService();
             var command = new AddCustomerCommand(service);
-            var button = new Button(command);
+            var button = new Command.Button(command);
             button.Click();
         }
         public static void Behavioral_CommandComposite()
@@ -318,8 +319,10 @@ namespace ConsoleApp1
             undoCommand.Execute();
             Console.WriteLine("UNDO: " + videoEditor);
         }
-    public static void Behavioral_Mediator()
+        public static void Behavioral_Mediator()
         {
+            var dialog = new ArticlesDialogBox();
+            dialog.SimulateUserInteraction();
 
         }
         public static void Behavioral_ChainOfResposibility()

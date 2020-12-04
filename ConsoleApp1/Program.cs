@@ -49,8 +49,9 @@ namespace ConsoleApp1
             //Behavioral.Behavioral_Command();
             //Behavioral.Behavioral_CommandComposite();
             //Behavioral.Behavioral_CommandUndo();
-            Behavioral.Behavioral_CommandDemo2();
+            //Behavioral.Behavioral_CommandDemo2();
 
+            Behavioral.Behavioral_Mediator();
         }
         static void ExecuteStructuralDemos() 
         {
